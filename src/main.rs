@@ -4,6 +4,7 @@ mod operacoes {
 }
 
 use operacoes::gerar_posfixa::infixa_para_posfixa;
+use operacoes::avaliar_posfixa::avalia_posfixa;
 use std::io;
 
 fn main() {
@@ -35,9 +36,9 @@ fn main() {
                 io::stdin()
                     .read_line(&mut expressao)
                     .expect("Falha ao ler a entrada");
-                // let expressao = expressao.trim();
-                // let resultado = avaliar_posfixa(expressao);
-                println!("Resultado da avaliação: {}", "resultado");
+                let expressao = expressao.trim();
+                let resultado = avalia_posfixa(expressao.to_string());
+                println!("Resultado da avaliação: {}", resultado);
             }
             3 => {
                 println!("Saindo...");
