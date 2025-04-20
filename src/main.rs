@@ -26,7 +26,7 @@ fn main() {
                     .read_line(&mut expressao)
                     .expect("Falha ao ler a entrada");
                 let expressao = expressao.trim();
-                let resultado = infixa_para_posfixa(expressao);
+                let resultado = infixa_para_posfixa(expressao.to_string());
                 println!("Expressão pós-fixada: {}", resultado);
             }
             2 => {
