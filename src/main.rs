@@ -2,7 +2,11 @@ mod operacoes {
     pub mod avaliar_posfixa;
     pub mod gerar_posfixa;
 }
+mod data_structures {
+    pub mod stack;
+}
 
+use operacoes::avaliar_posfixa::avaliar_posfixa;
 use operacoes::gerar_posfixa::infixa_para_posfixa;
 use std::io;
 
@@ -35,9 +39,9 @@ fn main() {
                 io::stdin()
                     .read_line(&mut expressao)
                     .expect("Falha ao ler a entrada");
-                // let expressao = expressao.trim();
-                // let resultado = avaliar_posfixa(expressao);
-                println!("Resultado da avaliação: {}", "resultado");
+                let expressao = expressao.trim();
+                let resultado = avaliar_posfixa(expressao);
+                println!("Resultado da avaliação: {}", resultado);
             }
             3 => {
                 println!("Saindo...");

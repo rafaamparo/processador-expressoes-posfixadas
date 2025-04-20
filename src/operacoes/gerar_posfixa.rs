@@ -1,38 +1,5 @@
+use crate::data_structures::stack::Stack;
 use std::collections::HashMap;
-
-struct Stack {
-    size: i32,
-    data: Vec<String>,
-}
-
-impl Stack {
-    fn new(size: i32) -> Stack {
-        Stack {
-            size,
-            data: Vec::with_capacity(size as usize),
-        }
-    }
-
-    fn push(&mut self, value: String) {
-        if self.data.len() < self.size as usize {
-            self.data.push(value);
-        } else {
-            panic!("Stack overflow");
-        }
-    }
-
-    fn pop(&mut self) -> String {
-        if !self.data.is_empty() {
-            self.data.pop().unwrap()
-        } else {
-            panic!("Stack underflow")
-        }
-    }
-
-    fn top(&self) -> Option<&String> {
-        self.data.last()
-    }
-}
 
 pub fn infixa_para_posfixa(expressao: &str) -> String {
     let binding = expressao.replace("(", " ( ").replace(")", " ) ");
